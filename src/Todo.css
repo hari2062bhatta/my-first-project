@@ -1,0 +1,73 @@
+*{
+    /* margin:0;
+    padding:0; */
+    text-align:Center;
+}
+.container{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    border:2px solid black;
+    min-height:150px;
+    width:300px;
+    margin-left:50px;
+    margin:100px auto
+    
+
+}
+.container h3{
+    display:flex;
+    justify-content:Center;
+    align-items:center
+
+}
+.todo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.todo input{
+   padding:10px;
+   border-radius:10px;
+}
+.todo #add ,#clear{
+    padding:6px;
+    margin:4px;
+    border-radius:8px;
+
+}
+#add{
+    background:green;
+
+}
+#clear{
+    background:red
+}
+.todolist {
+    /* display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:center;
+    margin-right:60px; */
+}
+ .todolist li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding: 10px;
+  margin-bottom: 10px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  margin-right:20px;
+}
+.todolist li #delete,.todolist li #update{
+    padding:4px;
+    border-radius:8px;
+}
+.todolist li #delete{
+    background:red;
+    margin:4px
+}
+.todolist li #update{
+    background:green;
+}
