@@ -53,6 +53,7 @@ const Todo = () => {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          onKeyPress={(e)=>(e.key==="Enter")?handleAdd():null}
           placeholder="enter your choice"
         ></input>
         <button onClick={handleAdd} id="add">
@@ -61,6 +62,7 @@ const Todo = () => {
         <button id="clear" onClick={handleClear}>
           Clear
         </button>
+          
       </div>
       <div className="todolist">
         <ul>
