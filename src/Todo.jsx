@@ -1,9 +1,13 @@
 import "./Todo.css";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 const Todo = () => {
+  const save =JSON.parse(localStorage.getItem("result"))
   const [input, setInput] = useState("");
-  const [result, setResult] = useState([]);
+  const [result, setResult] = useState(save||[]);
   const [editindex, setEditindex] = useState(null);
+  useEffect(()=>{
+    localStorage.setItem("result",JSON.stringify(result))
+  },[result])
   const handleAdd = () => {
     if (input.trim() === "") {
       alert("enter something");
@@ -22,11 +26,12 @@ const Todo = () => {
       setResult(update);
       setEditindex(null);
       setInput("");
+
       return;
     }
     setResult([...result, input]);
   setInput("");
-     localStorage.setItem("result",result)
+    //  localStorage.setItem("result",JSON.stringify(result))
   };
   const handleClear = () => {
     setResult([]);
@@ -35,7 +40,7 @@ const Todo = () => {
   const handleDelete = (i) => {
     const newResult = result.filter((_, index) => index != i);
     setResult(newResult);
-    localStorage.setItem("result",result)
+    
   };
   const handleUpdate = (i) => {
     setInput(result[i]);
